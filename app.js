@@ -25,3 +25,20 @@ let amigos = []; // Array para armazenar os nomes
                 lista.appendChild(item);
             });
         }
+
+        function sortearAmigo() {
+    // Verifica se há amigos disponíveis
+    if (amigos.length === 0) {
+        document.getElementById("resultado").innerHTML = "Nenhum amigo disponível para o sorteio.";
+        return;
+    }
+    
+    // Gera um índice aleatório
+    const indiceAleatorio = Math.floor(Math.random() * amigos.length);
+    
+    // Obtém o nome sorteado
+    const amigoSorteado = amigos[indiceAleatorio];
+    
+    // Mostra o resultado
+    document.getElementById("resultado").innerHTML = `O amigo sorteado é: <strong>${amigoSorteado}</strong>`;
+}
